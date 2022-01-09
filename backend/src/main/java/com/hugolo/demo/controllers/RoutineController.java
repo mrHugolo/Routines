@@ -15,5 +15,8 @@ public class RoutineController {
     private RoutineService routineService;
 
     @GetMapping
-    public List<Routine> getAllRoutines() {return routineService.getAllRoutines();}
+    public List<Routine> getAllRoutines() {
+        var a = routineService.getAllRoutines();
+        return a;
+    }
 }

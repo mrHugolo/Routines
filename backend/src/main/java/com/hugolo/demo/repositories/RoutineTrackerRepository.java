@@ -8,4 +8,7 @@ import java.util.List;
 
 @Repository
 public interface RoutineTrackerRepository extends JpaRepository<RoutineTracker, Long> {
+    List<RoutineTracker> findAllByDay(long day);
+
+    RoutineTracker save(RoutineTracker routineTracker);
 }

@@ -14,6 +14,13 @@ public class RoutineTrackerController {
     @Autowired
     private RoutineTrackerService routineTrackerService;
 
-    @GetMapping
-    public List<RoutineTracker> getAllRoutineTrackers() {return routineTrackerService.getAllRoutineTrackers();}
+    @GetMapping("/{day}")
+    public String getAllRoutineTrackersPerDay(@PathVariable long day) {
+        return routineTrackerService.getAllRoutineTrackersPerDay(day);
+    }
+
+    @PostMapping
+    public RoutineTracker createRoutineTracker(@RequestBody RoutineTracker routineTracker) {
+        return routineTrackerService.createRoutineTracker(routineTracker);
+    }
 }
