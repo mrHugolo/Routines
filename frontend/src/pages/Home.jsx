@@ -65,6 +65,11 @@ export const Home = () => {
     setRoutines(rs)
   }
 
+  const OKcheck = (text) => {
+    if(text[0] == 'O' && text[1] == 'K') return 'OK'
+    else return "success"
+  }
+
   return (
     <div className="content noselect">
       <div className="dateFlex">
@@ -83,7 +88,7 @@ export const Home = () => {
             <div className="routineContainer">
               {routines?.length && routines.filter(r => r.sectionId == s.id).sort((a, b) => a.priority > b.priority ? 1 : -1).map((r, ii) => (
                 <div key={`routine-${ii}`} id={`routine-${ii}`}
-                  className={`routine ${r.hasOwnProperty("success") ? `${r.success ? `success` : `failure`}` : ``}`}>
+                  className={`routine ${r.hasOwnProperty("success") ? `${!r.success ? `failure` : (OKcheck(r.comment))}` : ``}`}>
                   <p>{r.name}</p>
                   {r.hasOwnProperty("success") ?
                     (<h6 className="comment">{r.comment}</h6>) :

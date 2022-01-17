@@ -35,13 +35,16 @@ body {
   grid-row-start: 1;
 }
 
-.sectionContainer {
+.sectionContainer, .statContainer {
   grid-column-start: 2;
   grid-row-start: 2;
 
   border: var(--border) solid Black;
   background-color: #333333;
 
+  
+}
+.sectionContainer {
   display: grid;
   grid-template-columns: repeat(2, calc(var(--pageW)/2 - var(--border)));
   grid-template-rows: repeat(2, calc(var(--pageH)/2 - var(--border)));
@@ -77,10 +80,19 @@ body {
   background-color: black;
 }
 
-.routine {
+.routine, .stat {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.stat {
+  margin-top: 1.25vh;
+  margin-left: 1.25vh;
+  justify-content: flex-start
+}
+
+.flexStat {
+  display: flex;
 }
 
 h1 {
@@ -97,7 +109,8 @@ h6 {
 }
 
 p {
-  width: 150px
+  width: 150px;
+  margin: 0;
 }
 
 input {
@@ -116,6 +129,9 @@ input::placeholder {
 .failure {
   color: red;
 }
+.OK {
+  color: #FFC300;
+}
 
 button {
   height: 1.5rem;
@@ -124,6 +140,8 @@ button {
   border-radius: 50%;
   cursor: pointer;
   text-align: left;
+  padding: 0;
+  text-align: center;
 }
 button:hover {
   opacity: 0.8;
@@ -135,6 +153,10 @@ button.success {
 button.failure {
   background-color: #f2c2c1;
   border: 2px solid red;
+}
+button.OK {
+  background-color: #ffffba;
+  border: 2px solid #FFC300;
 }
 
 .comment {
@@ -151,4 +173,16 @@ button.failure {
 
 .invisible {
   visibility: hidden;
+}
+
+.center input{
+  width: 10vw;
+  left: calc(50% - 5vw);
+  position: absolute;
+  text-align: center;
+  margin-top: 5vh;
+}
+
+.small {
+  margin: 0;
 }
