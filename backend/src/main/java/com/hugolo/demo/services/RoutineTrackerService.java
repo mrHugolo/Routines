@@ -7,7 +7,6 @@ import com.hugolo.demo.helpClasses.RoutineStat;
 import com.hugolo.demo.helpClasses.RoutineTrackerStat;
 import com.hugolo.demo.repositories.RoutineRepository;
 import com.hugolo.demo.repositories.RoutineTrackerRepository;
-import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
