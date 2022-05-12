@@ -38,6 +38,11 @@ export const Statistics = () => {
     e.value = comment
   }
 
+  const goal = (routine) => {
+    let goal = Math.floor((routine.daysPerWeek + routine.daysPerMonth) * routine.routineTrackerStat.length / 35)
+    return `${routine.routineTrackerStat.filter(s => s.isSuccess).length}/${goal}`
+  }
+
   return(
     <div className="content noselect">
       <div className="center"><input id="daysBackXcomment" onKeyPress={handleKeyPress} defaultValue={daysBack}/></div>
@@ -51,6 +56,7 @@ export const Statistics = () => {
                   {isSuccess(s.isSuccess, s.comment)}
                 </div>
               ))}
+              <div className="goal">{goal(r)}</div>
             </div>
           </div>
         ))}
