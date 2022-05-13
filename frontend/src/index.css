@@ -30,6 +30,7 @@ body {
 }
 
 .dateFlex {
+  margin-top: 20px;
   text-align: center;
   grid-column-start: 2;
   grid-row-start: 1;
